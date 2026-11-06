@@ -10,6 +10,8 @@ Reclami: caricamento amministratore con una riga per reclamo; scelta esplicita d
 
 ## Ruoli
 
+Il proprietario preesistente ha il ruolo riservato `super_admin`: accesso completo e permesso Recuperi inclusi. Il suo account è escluso dalla lista utenti/ruoli anche nel payload server; la cronologia delle autorizzazioni mostra la dicitura Super Admin al posto della sua email. Il database impedisce di attribuire quel ruolo ad altri indirizzi, declassare o disattivare il proprietario dalla gestione utenti. Non esiste un’opzione Super Admin nel selettore dei ruoli.
+
 - `inserimento`: inserisce e consulta soltanto i propri invii; non lavora pratiche né reclami. Vede quantità aggregata della coda e attesa stimata (8 minuti per pratica).
 - `atpay`: inserisce, prende in carico dalla coda BO, aggiorna proprie lavorazioni, sceglie e lavora reclami; non vede archivio completo né gestione utenti.
 - `recuperi`: sceglie fuori ordine le pratiche disponibili, acquisisce il VO e può chiuderle/differirle prima della presa in carico BO.
