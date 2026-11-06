@@ -1,31 +1,42 @@
-# Portale Pratiche
+# Portale ASO / ATPAY
 
-Applicazione Next.js su Vercel con PostgreSQL e autenticazione Supabase. Non dipende da Google Sheets.
+Web app Next.js su Vercel, PostgreSQL e autenticazione Supabase. Tabelle private in `portal_internal` nel progetto condiviso con PT-PRO; nessuna modifica alle tabelle o alle policy dell’app PT-PRO. Nessun nuovo piano a pagamento.
 
-## Infrastruttura attuale
+## Flusso operativo originale
 
-Il portale usa lo schema riservato `portal_internal` nel progetto Supabase esistente di PT-PRO. I dati e le autorizzazioni del portale sono distinti; risorse e limiti del piano gratuito sono condivisi. Tabelle, policy, dati e configurazione Auth dell’app PT-PRO non sono stati cambiati. L’identità Auth è condivisa: gli utenti devono avere un account Supabase verificato e l’abilitazione in `portal_members`.
+ASO187/191 sono origini dell’inserimento, non code indipendenti. Tutte le pratiche confluiscono nella coda comune BO ATPAY. Il back office prende la prima disponibile in ordine di creazione. Una pratica BO attiva per operatore; se già in carico viene mantenuta. Esiti, note, richiami con VO e orario italiano 08–22, rilascio differite al successivo aggiornamento nella finestra operativa.
 
-Le operazioni applicative passano dalle funzioni `public.portal_snapshot` e `public.portal_mutate`. Queste chiamano funzioni interne che verificano l’identità tramite `auth.uid()` e il ruolo tramite `portal_members`. L’accesso diretto alle tabelle è negato ad anon e authenticated. Le chiavi privilegiate di progetto non sono utilizzate dal portale.
+Reclami: caricamento amministratore con una riga per reclamo; scelta esplicita dell’operatore; testo e note distinti; Gestito libera l’assegnazione e consente di riprendere; Chiusa elimina la riga e conserva l’evento di audit.
 
-## Sviluppo
+## Ruoli
 
-`npm ci`, poi `npm run dev`. Per validare: `npm run typecheck` e `npm run build`.
+- `inserimento`: inserisce e consulta soltanto i propri invii; non lavora pratiche né reclami. Vede quantità aggregata della coda e attesa stimata (8 minuti per pratica).
+- `atpay`: inserisce, prende in carico dalla coda BO, aggiorna proprie lavorazioni, sceglie e lavora reclami; non vede archivio completo né gestione utenti.
+- `admin`: archivio completo BOOM, statistiche globali, reclami massivi, risorse, utenti e ruoli, messaggio globale e presenze.
 
-Variabili su Vercel: `SUPABASE_URL` e `SUPABASE_PUBLISHABLE_KEY`. I token utente sono contenuti in cookie HttpOnly, Secure in produzione, SameSite=Lax. Il logout è locale alla sessione del portale. Nessuna chiave segreta o dato cliente nel repository.
+I nove amministratori del codice originale sono stati abilitati nel database, separatamente dalla configurazione pubblica del repository. L’account proprietario preesistente resta amministratore. L’elenco ATPAY è nel foglio TEAM SOSPC originale, non accessibile dal collegamento corrente; non viene ricostruito per supposizione. La directory TEAM SOSPC ha le cinque colonne originali e un import tramite incolla-tabella. Le abilitazioni ATPAY si assegnano per email esatta nella gestione utenti.
 
-`database/schema.sql` documenta la migrazione iniziale già applicata. Non eseguirla di nuovo sul progetto esistente. Le modifiche successive devono usare migrazioni incrementali.
+## Registrazione
 
-## Funzioni
+`/login` offre accesso, registrazione e recupero. Registrazione e ingresso al portale riservati a `@konecta.com`, salvo l’account proprietario già esistente. I nuovi account devono confermare l’email; il ruolo predefinito è Inserimento, non modificabile tramite metadata inviati dal browser. Il database verifica identità e ruolo a ogni operazione.
 
-Pratiche ASO187/191, BO ATPAY e reclami; inserimento, priorità, coda, una lavorazione attiva per operatore, esiti e note, differite, ricerca e filtri, esportazione CSV, statistiche, collegamenti documentali, gestione delle abilitazioni e registro attività. Tema chiaro/scuro. Nessuna modalità demo.
+Prima dell’apertura a tutto il team verificare in Supabase Auth:
 
-Gli operatori vedono le proprie pratiche e la coda; possono aggiornare soltanto quelle assegnate a loro. L’amministratore vede tutto. L’abilitazione dal Team non crea automaticamente un account Auth: le altre persone devono avere prima un account verificato nel sistema di autenticazione condiviso.
+- Redirect URLs comprendenti `https://portale-pratiche.vercel.app/login` e `https://portale-pratiche.vercel.app/reset`, preservando quelle esistenti.
+- Un servizio SMTP capace di inviare ai destinatari aziendali. L’invio reale e l’arrivo nelle caselle Konecta non sono stati collaudati dall’agente. Il servizio email predefinito Supabase ha restrizioni e limiti; non promettere onboarding illimitato senza questa verifica.
 
-## Limiti attuali
+Non disabilitare la conferma email: gli amministratori sono individuati tramite indirizzi aziendali e la loro proprietà va verificata. Password e sessioni Auth sono condivise con l’infrastruttura esistente: il cambio password dello stesso account vale anche nelle altre app che lo usano. Il logout usa scope local.
 
-- Storico Google Sheets non importato.
-- Differite rilasciate al successivo aggiornamento del portale; nessuna esecuzione programmata a portale chiuso.
-- Nessun caricamento massivo, recupero password self-service, invito account integrato, messaggistica, calendario, presenze online, notifiche push o upload di file.
-- Statistiche sull’archivio visibile, senza filtri di periodo.
-- Nessuna garanzia di risorse illimitate: utilizzo e quote vanno monitorati prima dell’estensione a tutto il team.
+## Altre funzioni ripristinate
+
+Statistiche giorno/settimana/mese/tutto, produttività FK e rate orario, obiettivi dagli ultimi 30 giorni, trend, heatmap, fasce di traffico storico, attesa stimata, appunti personali persistenti, calendario personale nel browser, link sistemi con modifica/eliminazione, manuali, documenti VO, directory SOS, comunicazioni, online e registro operazioni. Modalità chiara/scura. Nessuna demo.
+
+## Dati mancanti
+
+Storico pratiche/reclami, TEAM SOSPC e collegamenti documentali del foglio originale non sono importati. I due allegati contengono il codice, non le righe del foglio. Gli esportati originali sono necessari per un’importazione fedele e per assegnare tutti gli operatori ATPAY.
+
+## Sviluppo e database
+
+`npm ci`, `npm run dev`, `npm run typecheck`, `npm run build`. Variabili: `SUPABASE_URL`, `SUPABASE_PUBLISHABLE_KEY`. Nessuna chiave service-role nell’app Vercel. I cookie sono HttpOnly, Secure in produzione e SameSite=Lax; le scritture verificano la stessa origine.
+
+`database/schema.sql` è la migrazione iniziale. I file successivi in `database/migrations` documentano gli aggiornamenti applicati; non rieseguirli sul progetto attuale. Le assegnazioni nominative degli amministratori sono state eseguite nel database e non pubblicate come directory nel sorgente.
