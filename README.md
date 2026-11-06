@@ -12,6 +12,7 @@ Reclami: caricamento amministratore con una riga per reclamo; scelta esplicita d
 
 - `inserimento`: inserisce e consulta soltanto i propri invii; non lavora pratiche né reclami. Vede quantità aggregata della coda e attesa stimata (8 minuti per pratica).
 - `atpay`: inserisce, prende in carico dalla coda BO, aggiorna proprie lavorazioni, sceglie e lavora reclami; non vede archivio completo né gestione utenti.
+- `recuperi`: sceglie fuori ordine le pratiche disponibili, acquisisce il VO e può chiuderle/differirle prima della presa in carico BO.
 - `admin`: archivio completo BOOM, statistiche globali, reclami massivi, risorse, utenti e ruoli, messaggio globale e presenze.
 
 I nove amministratori del codice originale sono stati abilitati nel database, separatamente dalla configurazione pubblica del repository. L’account proprietario preesistente resta amministratore. L’elenco TEAM SOSPC originale è stato importato dall’esportazione fornita dall’utente. La directory TEAM SOSPC ha le cinque colonne originali e un import tramite incolla-tabella. Le abilitazioni ATPAY si assegnano per email esatta nella gestione utenti.
@@ -30,6 +31,18 @@ Non disabilitare la conferma email: gli amministratori sono individuati tramite 
 ## Altre funzioni ripristinate
 
 Statistiche giorno/settimana/mese/tutto, produttività FK e rate orario, obiettivi dagli ultimi 30 giorni, trend, heatmap, fasce di traffico storico, attesa stimata, appunti personali persistenti, calendario personale nel browser, link sistemi con modifica/eliminazione, manuali, documenti VO, directory SOS, comunicazioni, online e registro operazioni. Modalità chiara/scura. Nessuna demo.
+
+## Recuperi e Verbal Order
+
+Pannello distinto per il ruolo `recuperi`; gli amministratori possono anche abilitare il permesso aggiuntivo `can_recover` a un altro ruolo. Nessuna abilitazione Recuperi deriva dalla sola registrazione o da metadata dichiarati dal browser.
+
+Gli addetti scelgono manualmente una pratica Nuova non ancora assegnata al BO. L’assegnazione Recuperi è distinta da quella BO; non crea copie e non blocca la presa in carico FIFO. Il BO continua a selezionare la prima pratica per data di creazione, anche se ha un recupero VO in corso.
+
+“Registra solo VO” salva esclusivamente il numero e la traccia dell’attività Recuperi, senza cambiare creazione, aggiornamento della lavorazione BO, stato, assegnazione BO o scadenza. Il codice può essere aggiunto anche se nel frattempo il BO prende la stessa pratica. La chiusura BO conserva il VO.
+
+Chiusura con esito e Differita aggiornano la stessa pratica. Se il BO l’ha già presa, queste due operazioni sono rifiutate ai Recuperi per evitare sovrascritture; rimane possibile completare il VO. Le differite usano data futura e fascia italiana 08–22.
+
+L’assegnazione Recuperi si libera con il salvataggio, il rilascio manuale, la conclusione BO o dopo 30 minuti senza aggiornamenti del portale dell’addetto. Ogni azione è registrata nell’audit della pratica. Non ci sono utenti abilitati automaticamente: l’amministratore assegna il ruolo o il permesso dalla gestione utenti.
 
 ## Gestione nuovi operatori
 
