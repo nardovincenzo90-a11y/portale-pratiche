@@ -14,7 +14,7 @@ Reclami: caricamento amministratore con una riga per reclamo; scelta esplicita d
 - `atpay`: inserisce, prende in carico dalla coda BO, aggiorna proprie lavorazioni, sceglie e lavora reclami; non vede archivio completo né gestione utenti.
 - `admin`: archivio completo BOOM, statistiche globali, reclami massivi, risorse, utenti e ruoli, messaggio globale e presenze.
 
-I nove amministratori del codice originale sono stati abilitati nel database, separatamente dalla configurazione pubblica del repository. L’account proprietario preesistente resta amministratore. L’elenco ATPAY è nel foglio TEAM SOSPC originale, non accessibile dal collegamento corrente; non viene ricostruito per supposizione. La directory TEAM SOSPC ha le cinque colonne originali e un import tramite incolla-tabella. Le abilitazioni ATPAY si assegnano per email esatta nella gestione utenti.
+I nove amministratori del codice originale sono stati abilitati nel database, separatamente dalla configurazione pubblica del repository. L’account proprietario preesistente resta amministratore. L’elenco TEAM SOSPC originale è stato importato dall’esportazione fornita dall’utente. La directory TEAM SOSPC ha le cinque colonne originali e un import tramite incolla-tabella. Le abilitazioni ATPAY si assegnano per email esatta nella gestione utenti.
 
 ## Registrazione
 
@@ -31,9 +31,19 @@ Non disabilitare la conferma email: gli amministratori sono individuati tramite 
 
 Statistiche giorno/settimana/mese/tutto, produttività FK e rate orario, obiettivi dagli ultimi 30 giorni, trend, heatmap, fasce di traffico storico, attesa stimata, appunti personali persistenti, calendario personale nel browser, link sistemi con modifica/eliminazione, manuali, documenti VO, directory SOS, comunicazioni, online e registro operazioni. Modalità chiara/scura. Nessuna demo.
 
-## Dati mancanti
+## Gestione nuovi operatori
 
-Storico pratiche/reclami, TEAM SOSPC e collegamenti documentali del foglio originale non sono importati. I due allegati contengono il codice, non le righe del foglio. Gli esportati originali sono necessari per un’importazione fedele e per assegnare tutti gli operatori ATPAY.
+Gli utenti si registrano con email aziendale verificata e ruolo Inserimento. Possono inviare una richiesta di accesso BO con matricola/codice e motivazione. Solo un amministratore può approvarla o rifiutarla. Un codice dichiarato non concede mai permessi automaticamente.
+
+Gli amministratori possono aggiungere e modificare l’anagrafica TEAM SOSPC, associare un’email aziendale esplicita e abilitare/disabilitare la lavorazione BO. Gli account possono essere disattivati dalla gestione utenti. Permessi e decisioni sono registrati nella cronologia delle autorizzazioni. Non serve mantenere un Excel per i nuovi inserimenti.
+
+## Importazione iniziale
+
+Importati nel database l’anagrafica di 30 operatori, 35 risorse e 34 eventi del registro originale. Quattro anagrafiche utente sono state riportate come abilitazioni; i ruoli amministratore già assegnati sono stati preservati. Le email BO sono state associate solo quando presenti nel file e riconducibili in modo univoco alla directory; per le altre righe l’email resta da associare nell’app.
+
+Il file caricato aveva Pratiche, Reclami e Storico vuoti. Cinque risorse erano prive di URL e rimangono marcate come da completare. Il registro conserva anche l’ID originale della pratica, senza inventare pratiche mancanti. Password, salt, hash e token del vecchio foglio Utenti non sono importati né pubblicati: gli utenti aziendali si registrano/confermano con il sistema Auth.
+
+Il file sorgente e i dati individuali dell’importazione non sono inclusi nel repository pubblico. Le tabelle si gestiscono ora dall’app; l’Excel ha fornito soltanto la situazione iniziale.
 
 ## Sviluppo e database
 
