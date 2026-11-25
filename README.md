@@ -65,3 +65,9 @@ Il file sorgente e i dati individuali dell’importazione non sono inclusi nel r
 `npm ci`, `npm run dev`, `npm run typecheck`, `npm run build`. Variabili: `SUPABASE_URL`, `SUPABASE_PUBLISHABLE_KEY`. Nessuna chiave service-role nell’app Vercel. I cookie sono HttpOnly, Secure in produzione e SameSite=Lax; le scritture verificano la stessa origine.
 
 `database/schema.sql` è la migrazione iniziale. I file successivi in `database/migrations` documentano gli aggiornamenti applicati; non rieseguirli sul progetto attuale. Le assegnazioni nominative degli amministratori sono state eseguite nel database e non pubblicate come directory nel sorgente.
+
+## Aggiornamento VO e BOOM
+- Numero VO facoltativo all’inserimento (1–40 cifre, zeri iniziali conservati).
+- Recuperi vede tutte le pratiche e filtra per presenza VO o stato; la modifica resta limitata alle operazioni autorizzate.
+- BOOM include pratiche e reclami, filtro per giorno di inserimento Europe/Rome (oggi predefinito), navigazione giorni, tutti i giorni e tipo pratica. Il CSV rispetta i filtri.
+- Admin e Super Admin possono eliminare singoli record con conferma del numero; resta un evento nel registro. Nessuna cancellazione massiva automatica.
