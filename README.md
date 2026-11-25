@@ -70,4 +70,14 @@ Il file sorgente e i dati individuali dell’importazione non sono inclusi nel r
 - Numero VO facoltativo all’inserimento (1–40 cifre, zeri iniziali conservati).
 - Recuperi vede tutte le pratiche e filtra per presenza VO o stato; la modifica resta limitata alle operazioni autorizzate.
 - BOOM include pratiche e reclami, filtro per giorno di inserimento Europe/Rome (oggi predefinito), navigazione giorni, tutti i giorni e tipo pratica. Il CSV rispetta i filtri.
-- Admin e Super Admin possono eliminare singoli record con conferma del numero; resta un evento nel registro. Nessuna cancellazione massiva automatica.
+- Admin e Super Admin possono eliminare singoli record con conferma del numero; resta un evento nel registro.
+
+## Elenchi giornalieri e selezione BOOM
+- Selettore condiviso del giorno, ora Europe/Rome, inizialmente oggi; precedente, successivo e data libera.
+- Inserimenti e BOOM usano la data di creazione; lavorazioni concluse e riepiloghi esiti la data di aggiornamento; recuperi completati la data di recupero; registri la data dell’evento.
+- Code aperte BO, reclami disponibili e recuperi da completare conservano le richieste arretrate visibili, con paginazione.
+- Tabelle e directory lunghe: 50 righe per pagina. Utenti, anagrafiche e risorse restano consultabili senza filtro sulla loro data di creazione.
+- BOOM: selezione singola o di tutte le righe filtrate (max 1000 per operazione). Cambiare giorno, ricerca, stato, tipo o sezione azzera la selezione.
+- Eliminazione multipla: solo admin/super admin; conferma ELIMINA N, verifica integrale degli ID, blocco delle righe e cancellazione atomica. Se manca un elemento, nessuno viene eliminato. Un evento di audit per ciascun record.
+- Registro attività e autorizzazioni caricati dal database per il giorno scelto, senza il vecchio limite agli ultimi 200 eventi. Le query rispettano i permessi e l’eccezione Super Admin.
+- Verifica date: node --test tests/dates.test.mjs (Node >=22.18); inclusi confini italiani e giorni di cambio ora da 23/25 ore.

@@ -1,5 +1,5 @@
 import {currentUser,rpc,sameOrigin} from '../../../lib/backend';
 export const dynamic='force-dynamic';
 const json=(d:unknown,s=200)=>Response.json(d,{status:s,headers:{'Cache-Control':'no-store'}});
-export async function GET(){try{const u=await currentUser();if(!u)return json({error:'Accesso richiesto'},401);return json(await rpc('portal_snapshot',{},u.accessToken));}catch(e){return json({error:(e as Error).message},403);}}
+export async function GET(req:Request){try{const u=await currentUser();if(!u)return json({error:'Accesso richiesto'},401);const d=await rpc('portal_snapshot',{},u.accessToken);const day=new URL(req.url).searchParams.get('day');if(day&&/^\d{4}-\d{2}-\d{2}$/.test(day)){d.events=await rpc('portal_events_day',{day},u.accessToken);if(['admin','super_admin'].includes(d.me.role))d.accessAudit=await rpc('portal_access_audit_day',{day},u.accessToken);}return json(d);}catch(e){return json({error:(e as Error).message},403);}}
 export async function POST(req:Request){try{if(!sameOrigin(req))return json({error:'Origine non valida'},403);const u=await currentUser();if(!u)return json({error:'Accesso richiesto'},401);const b=await req.json();return json(await rpc('portal_mutate',{payload:b},u.accessToken));}catch(e){return json({error:(e as Error).message},400);}}
