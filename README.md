@@ -83,10 +83,10 @@ Il file sorgente e i dati individuali dell’importazione non sono inclusi nel r
 - Verifica date: node --test tests/dates.test.mjs (Node >=22.18); inclusi confini italiani e giorni di cambio ora da 23/25 ore.
 
 ## Segnalazioni tecniche e interfaccia operativa
-- Nuovo esito BO/Recuperi: Aprire segnalazione tecnica. La stessa pratica entra nel bacino dedicato; VO, creatore e lavorazione BO restano collegati.
+- Nuovo esito BO/Recuperi: Aprire segnalazione tecnica. La stessa pratica entra nel bacino dedicato; VO, creatore e lavorazione BO restano collegati. È disponibile anche la richiesta separata dopo qualunque esito conclusivo, oppure la casella durante il salvataggio dell’esito.
 - Accesso al bacino: BO ATPAY, admin, Super Admin. Assegnazione tecnica distinta da quella BO: Da gestire → In lavorazione → Gestita.
 - Presa in carico con blocco della riga, bozza, rilascio, chiusura con numero/protocollo obbligatorio, note separate. Solo admin possono riaprire.
 - Le richieste tecniche aperte rimangono visibili tra i giorni; l’archivio gestite segue il giorno di completamento. Tabelle paginate, ricerca, contatore nel menu, dati tecnici nel CSV.
-- Il completamento tecnico non sposta la data della produttività BO: i riepiloghi usano la data di invio al bacino tecnico per le pratiche trasferite.
+- Esito e data della lavorazione BO sono indipendenti dalla gestione tecnica: una richiesta successiva, anche su FK15/FK30/FK03, conserva fatturazione e produttività del giorno originario.
 - Grafica operativa: menu scorrevole, gerarchia leggibile, tabelle con intestazioni fisse, stati distinti, modali coerenti, campi più leggibili, modalità chiara/scura, layout mobile e focus tastiera.
 - Test DB ripetibile senza residui: tests/technical-workflow.sql.
