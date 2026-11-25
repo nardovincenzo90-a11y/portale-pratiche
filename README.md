@@ -81,3 +81,12 @@ Il file sorgente e i dati individuali dell’importazione non sono inclusi nel r
 - Eliminazione multipla: solo admin/super admin; conferma ELIMINA N, verifica integrale degli ID, blocco delle righe e cancellazione atomica. Se manca un elemento, nessuno viene eliminato. Un evento di audit per ciascun record.
 - Registro attività e autorizzazioni caricati dal database per il giorno scelto, senza il vecchio limite agli ultimi 200 eventi. Le query rispettano i permessi e l’eccezione Super Admin.
 - Verifica date: node --test tests/dates.test.mjs (Node >=22.18); inclusi confini italiani e giorni di cambio ora da 23/25 ore.
+
+## Segnalazioni tecniche e interfaccia operativa
+- Nuovo esito BO/Recuperi: Aprire segnalazione tecnica. La stessa pratica entra nel bacino dedicato; VO, creatore e lavorazione BO restano collegati.
+- Accesso al bacino: BO ATPAY, admin, Super Admin. Assegnazione tecnica distinta da quella BO: Da gestire → In lavorazione → Gestita.
+- Presa in carico con blocco della riga, bozza, rilascio, chiusura con numero/protocollo obbligatorio, note separate. Solo admin possono riaprire.
+- Le richieste tecniche aperte rimangono visibili tra i giorni; l’archivio gestite segue il giorno di completamento. Tabelle paginate, ricerca, contatore nel menu, dati tecnici nel CSV.
+- Il completamento tecnico non sposta la data della produttività BO: i riepiloghi usano la data di invio al bacino tecnico per le pratiche trasferite.
+- Grafica operativa: menu scorrevole, gerarchia leggibile, tabelle con intestazioni fisse, stati distinti, modali coerenti, campi più leggibili, modalità chiara/scura, layout mobile e focus tastiera.
+- Test DB ripetibile senza residui: tests/technical-workflow.sql.
