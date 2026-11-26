@@ -64,7 +64,7 @@ export function createExercise(){
      accessAudit.unshift({id:crypto.randomUUID(),created:stamp(),actor,target_email:b.email,action:'Permessi aggiornati'});
      break;
     }
-    case 'decideBO': {
+    case 'decideRole': {
      const request=accessRequests.find(item=>item.id===b.id&&item.status==='pending');
      demand(admin(role)&&request&&['approve','reject'].includes(b.decision));
      request!.status=b.decision==='approve'?'approved':'rejected';

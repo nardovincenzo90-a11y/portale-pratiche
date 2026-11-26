@@ -8,6 +8,10 @@ export async function POST(req: Request) {
     const email = String(body.email ?? '').trim().toLowerCase();
     const alternate = String(body.recovery_email ?? '').trim().toLowerCase();
     const name = String(body.name ?? '').trim();
+    const requestedRole = body.requested_role ?? 'inserimento';
+    if (!['inserimento', 'recuperi', 'atpay'].includes(requestedRole)) {
+      return Response.json({ error: 'Seleziona un ruolo disponibile.' }, { status: 400 });
+    }
     if (!companyEmail.test(email) || email.length > 254) {
       return Response.json({ error: 'Inserisci il tuo indirizzo @konecta.com.' }, { status: 400 });
     }
@@ -15,7 +19,7 @@ export async function POST(req: Request) {
       return Response.json({ error: 'Inserisci un indirizzo alternativo che puoi consultare.' }, { status: 400 });
     }
     if (!name || name.length > 120) return Response.json({ error: 'Inserisci nome e cognome.' }, { status: 400 });
-    await enrollmentService('request', { work_email: email, recovery_email: alternate, name });
+    await enrollmentService('request', { work_email: email, recovery_email: alternate, name, requested_role: requestedRole });
     await sendEnrollmentLink(email, true, alternate).catch(() => console.warn('Invio attivazione Portale non completato'));
     return Response.json({ message: 'Se l’abbinamento è già verificato, il link di attivazione sarà inviato all’indirizzo alternativo indicato. Controlla anche la posta indesiderata. Se non hai ancora un abbinamento, contatta l’amministratore.' });
   } catch {
