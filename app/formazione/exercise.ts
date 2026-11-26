@@ -27,7 +27,7 @@ export function createExercise(){
    const actor=email(role),op=b.action;
    let c=cases.find(x=>x.id===b.id);
    switch(op){
-    case 'create': c=row(++seq,b.kind,{creator:actor,client:b.client,phone:b.phone,notes:b.notes,vo:b.vo||null});cases.push(c);break;
+    case 'create': c=row(++seq,b.kind,{creator:actor,client:b.client,requested_service:b.requested_service||null,phone:b.phone,notes:b.notes,vo:b.vo||null});cases.push(c);break;
     case 'claim':
      if(b.kind==='Reclamo'){demand(complaints(role)&&c?.kind==='Reclamo'&&!c.assigned&&['Nuova','Gestito'].includes(c.status));}
      else{demand(work(role));if(cases.some(x=>x.kind!=='Reclamo'&&x.status==='In lavorazione'&&x.assigned===actor))return {existing:true};c=queue()[0];demand(c,'Nessuna pratica disponibile');}
