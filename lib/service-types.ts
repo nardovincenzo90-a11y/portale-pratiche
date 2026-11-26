@@ -10,6 +10,8 @@ export const serviceOutcomes = [
   'Fatturato Caring',
   'Swap Light',
   'Onsite a pagamento',
+  'ONSITE 191',
+  'ONSITE 187',
   'Vendita prodotto',
 ] as const;
 
@@ -25,6 +27,6 @@ export function matchesService(row: { requested_service?: string | null; status:
   }
   if (service) return false;
   return (filter === 'CARING' && row.status === 'Fatturato Caring')
-    || (filter === 'ONSITE' && row.status === 'Onsite a pagamento')
+    || (filter === 'ONSITE' && ['Onsite a pagamento','ONSITE 191','ONSITE 187'].includes(row.status))
     || (filter === 'VENDITA PRODOTTO' && row.status === 'Vendita prodotto');
 }
