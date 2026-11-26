@@ -1,0 +1,176 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Count 4 /Kids [5 0 R 7 0 R 9 0 R 11 0 R] >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding >>
+endobj
+5 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 6 0 R >>
+endobj
+6 0 obj
+<< /Length 2402 >>
+stream
+0.07 0.14 0.25 rg 0 745 595 97 re f
+BT /F2 12 Tf .6 .9 .85 rg 46 793 Td (PORTALE PRATICHE / BO ATPAY) Tj ET
+BT /F2 26 Tf 1 1 1 rg 46 760 Td (Manuale operativo) Tj ET
+BT /F2 19 Tf .12 .18 .28 rg 46 716 Td (Accesso e ruoli) Tj ET
+BT /F2 13 Tf .12 .18 .28 rg 46 678 Td (Entrare nel portale) Tj ET
+BT /F1 11 Tf .12 .18 .28 rg 46 662 Td (Accedi con il tuo indirizzo @konecta.com e la password del portale. Alla) Tj ET
+BT /F1 11 Tf .12 .18 .28 rg 46 646 Td (registrazione indica anche una casella alternativa. Quando l'abbinamento \350) Tj ET
+BT /F1 11 Tf .12 .18 .28 rg 46 630 Td (verificato, il link di attivazione arriva a quella casella.) Tj ET
+BT /F2 13 Tf .12 .18 .28 rg 46 600 Td (Password dimenticata) Tj ET
+BT /F1 11 Tf .12 .18 .28 rg 46 584 Td (Apri Password dimenticata, inserisci l'email Konecta e invia la richiesta. Il link) Tj ET
+BT /F1 11 Tf .12 .18 .28 rg 46 568 Td (arriva all'email alternativa associata. Se non lo trovi, controlla la posta) Tj ET
+BT /F1 11 Tf .12 .18 .28 rg 46 552 Td (indesiderata o rivolgiti a un amministratore.) Tj ET
+BT /F2 13 Tf .12 .18 .28 rg 46 522 Td (Inserimento ASO) Tj ET
+BT /F1 11 Tf .12 .18 .28 rg 46 506 Td (Inserisce pratiche e consulta i propri inserimenti e i relativi esiti.) Tj ET
+BT /F2 13 Tf .12 .18 .28 rg 46 476 Td (BO ATPAY) Tj ET
+BT /F1 11 Tf .12 .18 .28 rg 46 460 Td (Lavora la coda BO, registra esiti, gestisce Reclami e Segnalazioni tecniche.) Tj ET
+BT /F2 13 Tf .12 .18 .28 rg 46 430 Td (Recuperi / VO) Tj ET
+BT /F1 11 Tf .12 .18 .28 rg 46 414 Td (Consulta il bacino, registra VO e gestisce Reclami. Il permesso Recuperi pu\362) Tj ET
+BT /F1 11 Tf .12 .18 .28 rg 46 398 Td (essere aggiunto a un altro ruolo.) Tj ET
+BT /F2 13 Tf .12 .18 .28 rg 46 368 Td (Amministratore e Super Admin) Tj ET
+BT /F1 11 Tf .12 .18 .28 rg 46 352 Td (Gli admin accedono a BOOM, statistiche globali, registro e permessi. Il Super) Tj ET
+BT /F1 11 Tf .12 .18 .28 rg 46 336 Td (Admin ha accesso completo ed \350 riservato.) Tj ET
+BT /F2 13 Tf .12 .18 .28 rg 46 306 Td (Richiesta BO ATPAY) Tj ET
+BT /F1 11 Tf .12 .18 .28 rg 46 290 Td (Un utente Inserimento pu\362 richiedere l'abilitazione dopo l'iscrizione.) Tj ET
+BT /F1 11 Tf .12 .18 .28 rg 46 274 Td (L'amministratore la approva o la rifiuta.) Tj ET
+.85 .88 .92 RG 46 53 m 549 53 l S
+BT /F1 9 Tf .12 .18 .28 rg 46 35 Td (Guida interna al Portale Pratiche) Tj ET
+BT /F1 9 Tf .12 .18 .28 rg 515 35 Td (1 / 4) Tj ET
+endstream
+endobj
+7 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 8 0 R >>
+endobj
+8 0 obj
+<< /Length 2863 >>
+stream
+0.07 0.14 0.25 rg 0 745 595 97 re f
+BT /F2 12 Tf .6 .9 .85 rg 46 793 Td (PORTALE PRATICHE / BO ATPAY) Tj ET
+BT /F2 26 Tf 1 1 1 rg 46 760 Td (Manuale operativo) Tj ET
+BT /F2 19 Tf .12 .18 .28 rg 46 716 Td (Da ASO alla lavorazione BO) Tj ET
+BT /F2 13 Tf .12 .18 .28 rg 46 678 Td (1. Inserisci una pratica) Tj ET
+BT /F1 11 Tf .12 .18 .28 rg 46 662 Td (Apri Inserimento ASO. Scegli ASO187 o ASO191. Compila numero cliente, recapito e) Tj ET
+BT /F1 11 Tf .12 .18 .28 rg 46 646 Td (note. Se hai gi\340 il numero VO, inseriscilo. Salva. La pratica entra nella coda BO) Tj ET
+BT /F1 11 Tf .12 .18 .28 rg 46 630 Td (comune.) Tj ET
+BT /F2 13 Tf .12 .18 .28 rg 46 600 Td (2. Controlla i tuoi inserimenti) Tj ET
+BT /F1 11 Tf .12 .18 .28 rg 46 584 Td (Apri I miei inserimenti. Puoi cercare la pratica, scegliere il giorno e leggere lo) Tj ET
+BT /F1 11 Tf .12 .18 .28 rg 46 568 Td (stato o l'esito. In Panoramica trovi anche il numero di pratiche in attesa e la) Tj ET
+BT /F1 11 Tf .12 .18 .28 rg 46 552 Td (stima del tempo.) Tj ET
+BT /F2 13 Tf .12 .18 .28 rg 46 522 Td (3. Recupera il Verbal Order) Tj ET
+BT /F1 11 Tf .12 .18 .28 rg 46 506 Td (Apri Recuperi, cerca la pratica e usa i filtri per VO o stato. Puoi scegliere una) Tj ET
+BT /F1 11 Tf .12 .18 .28 rg 46 490 Td (pratica disponibile anche fuori ordine. Con Registra solo VO, il numero viene) Tj ET
+BT /F1 11 Tf .12 .18 .28 rg 46 474 Td (aggiunto alla stessa pratica senza spostarla in coda.) Tj ET
+BT /F2 13 Tf .12 .18 .28 rg 46 444 Td (4. Prendi in carico dal BO) Tj ET
+BT /F1 11 Tf .12 .18 .28 rg 46 428 Td (In BO ATPAY premi Prendi prima pratica. Il portale propone la pi\371 vecchia) Tj ET
+BT /F1 11 Tf .12 .18 .28 rg 46 412 Td (disponibile. Se hai gi\340 una pratica BO attiva, continua quella. Leggi le note e il) Tj ET
+BT /F1 11 Tf .12 .18 .28 rg 46 396 Td (VO, poi salva l'esito.) Tj ET
+BT /F2 13 Tf .12 .18 .28 rg 46 366 Td (5. Gestisci esiti e differite) Tj ET
+BT /F1 11 Tf .12 .18 .28 rg 46 350 Td (FK15, FK30 e FK03 contano come fatturati. Usa gli altri esiti secondo il caso. Per) Tj ET
+BT /F1 11 Tf .12 .18 .28 rg 46 334 Td (Differita indica un VO e un richiamo futuro tra le 08:00 e le 22:00, ora italiana.) Tj ET
+BT /F1 11 Tf .12 .18 .28 rg 46 318 Td (Le pratiche aperte dei giorni scorsi restano visibili nelle code.) Tj ET
+BT /F2 13 Tf .12 .18 .28 rg 46 288 Td (Operatore Recuperi gi\340 assegnato) Tj ET
+BT /F1 11 Tf .12 .18 .28 rg 46 272 Td (Se il BO prende la pratica nel frattempo, puoi ancora aggiungere il VO finch\351 lo) Tj ET
+BT /F1 11 Tf .12 .18 .28 rg 46 256 Td (stato lo consente. Chiusura e differimento da Recuperi sono possibili finch\351 la) Tj ET
+BT /F1 11 Tf .12 .18 .28 rg 46 240 Td (pratica \350 disponibile.) Tj ET
+.85 .88 .92 RG 46 53 m 549 53 l S
+BT /F1 9 Tf .12 .18 .28 rg 46 35 Td (Guida interna al Portale Pratiche) Tj ET
+BT /F1 9 Tf .12 .18 .28 rg 515 35 Td (2 / 4) Tj ET
+endstream
+endobj
+9 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 10 0 R >>
+endobj
+10 0 obj
+<< /Length 2252 >>
+stream
+0.07 0.14 0.25 rg 0 745 595 97 re f
+BT /F2 12 Tf .6 .9 .85 rg 46 793 Td (PORTALE PRATICHE / BO ATPAY) Tj ET
+BT /F2 26 Tf 1 1 1 rg 46 760 Td (Manuale operativo) Tj ET
+BT /F2 19 Tf .12 .18 .28 rg 46 716 Td (Reclami e segnalazioni tecniche) Tj ET
+BT /F2 13 Tf .12 .18 .28 rg 46 678 Td (Reclami | BO ATPAY, Recuperi e admin) Tj ET
+BT /F1 11 Tf .12 .18 .28 rg 46 662 Td (Apri Reclami. Scegli o riprendi un reclamo disponibile, leggi il testo e aggiungi) Tj ET
+BT /F1 11 Tf .12 .18 .28 rg 46 646 Td (le note di lavorazione. Usa Gestito per renderlo nuovamente disponibile o Chiusa) Tj ET
+BT /F1 11 Tf .12 .18 .28 rg 46 630 Td (per rimuoverlo dall'elenco. La chiusura resta nel registro. Gli admin possono) Tj ET
+BT /F1 11 Tf .12 .18 .28 rg 46 614 Td (caricare pi\371 reclami, uno per riga.) Tj ET
+BT /F2 13 Tf .12 .18 .28 rg 46 584 Td (Richiedi una segnalazione tecnica) Tj ET
+BT /F1 11 Tf .12 .18 .28 rg 46 568 Td (Dal BO puoi richiedere una segnalazione tecnica mentre salvi l'esito o in seguito) Tj ET
+BT /F1 11 Tf .12 .18 .28 rg 46 552 Td (da una pratica gi\340 gestita. Se la pratica \350 FK15, la fatturazione e la data) Tj ET
+BT /F1 11 Tf .12 .18 .28 rg 46 536 Td (dell'esito BO restano valide.) Tj ET
+BT /F2 13 Tf .12 .18 .28 rg 46 506 Td (Lavora nel bacino tecnico | BO ATPAY e admin) Tj ET
+BT /F1 11 Tf .12 .18 .28 rg 46 490 Td (Apri Segnalazioni tecniche e prendi in carico una richiesta. Puoi salvare una) Tj ET
+BT /F1 11 Tf .12 .18 .28 rg 46 474 Td (bozza o rilasciarla. Per segnare Gestita, registra il numero o protocollo della) Tj ET
+BT /F1 11 Tf .12 .18 .28 rg 46 458 Td (segnalazione aperta e le eventuali note. Gli admin possono riaprire una) Tj ET
+BT /F1 11 Tf .12 .18 .28 rg 46 442 Td (segnalazione gestita.) Tj ET
+BT /F2 13 Tf .12 .18 .28 rg 46 412 Td (Code e archivio) Tj ET
+BT /F1 11 Tf .12 .18 .28 rg 46 396 Td (Le richieste ancora aperte restano visibili anche se risalgono a giorni) Tj ET
+BT /F1 11 Tf .12 .18 .28 rg 46 380 Td (precedenti. Per consultare la cronologia, scegli il giorno e usa i filtri) Tj ET
+BT /F1 11 Tf .12 .18 .28 rg 46 364 Td (disponibili.) Tj ET
+.85 .88 .92 RG 46 53 m 549 53 l S
+BT /F1 9 Tf .12 .18 .28 rg 46 35 Td (Guida interna al Portale Pratiche) Tj ET
+BT /F1 9 Tf .12 .18 .28 rg 515 35 Td (3 / 4) Tj ET
+endstream
+endobj
+11 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 12 0 R >>
+endobj
+12 0 obj
+<< /Length 2547 >>
+stream
+0.07 0.14 0.25 rg 0 745 595 97 re f
+BT /F2 12 Tf .6 .9 .85 rg 46 793 Td (PORTALE PRATICHE / BO ATPAY) Tj ET
+BT /F2 26 Tf 1 1 1 rg 46 760 Td (Manuale operativo) Tj ET
+BT /F2 19 Tf .12 .18 .28 rg 46 716 Td (Controllo e strumenti) Tj ET
+BT /F2 13 Tf .12 .18 .28 rg 46 678 Td (BOOM | Solo amministratori) Tj ET
+BT /F1 11 Tf .12 .18 .28 rg 46 662 Td (Seleziona il giorno di inserimento, filtra per tipo o stato e cerca la pratica.) Tj ET
+BT /F1 11 Tf .12 .18 .28 rg 46 646 Td (Esporta CSV per ottenere l'elenco filtrato. Puoi eliminare un singolo elemento o) Tj ET
+BT /F1 11 Tf .12 .18 .28 rg 46 630 Td (pi\371 elementi selezionati con conferma. L'operazione resta nel registro.) Tj ET
+BT /F2 13 Tf .12 .18 .28 rg 46 600 Td (Utenti e permessi | Solo amministratori) Tj ET
+BT /F1 11 Tf .12 .18 .28 rg 46 584 Td (Approva o rifiuta richieste BO. Gestisci i ruoli, lo stato dell'account e il) Tj ET
+BT /F1 11 Tf .12 .18 .28 rg 46 568 Td (permesso aggiuntivo Recuperi. Le autorizzazioni sono tracciate. Il Super Admin non) Tj ET
+BT /F1 11 Tf .12 .18 .28 rg 46 552 Td (compare nell'elenco dei ruoli gestibili.) Tj ET
+BT /F2 13 Tf .12 .18 .28 rg 46 522 Td (Statistiche e registro) Tj ET
+BT /F1 11 Tf .12 .18 .28 rg 46 506 Td (Consulta le statistiche personali per giorno. Gli admin trovano anche i riepiloghi) Tj ET
+BT /F1 11 Tf .12 .18 .28 rg 46 490 Td (globali e il registro delle operazioni. La sezione BO mostra fatturati, pratiche) Tj ET
+BT /F1 11 Tf .12 .18 .28 rg 46 474 Td (concluse e fatturati per ora.) Tj ET
+BT /F2 13 Tf .12 .18 .28 rg 46 444 Td (Risorse comuni) Tj ET
+BT /F1 11 Tf .12 .18 .28 rg 46 428 Td (Usa TEAM SOSPC come anagrafica operativa e consulta Link sistemi, Documenti VO e) Tj ET
+BT /F1 11 Tf .12 .18 .28 rg 46 412 Td (Manuali. Le comunicazioni sono pubblicate dagli admin. Gli appunti sono personali.) Tj ET
+BT /F1 11 Tf .12 .18 .28 rg 46 396 Td (Gli eventi del calendario restano nel browser.) Tj ET
+BT /F2 13 Tf .12 .18 .28 rg 46 366 Td (Obiettivo del pilota | +10% di pratiche fatturate) Tj ET
+BT /F1 11 Tf .12 .18 .28 rg 46 350 Td (Confronta i conteggi FK15, FK30 e FK03 in periodi comparabili. Da 100 fatturate il) Tj ET
+BT /F1 11 Tf .12 .18 .28 rg 46 334 Td (traguardo \350 110. Considera anche fatturati per ora e quota sul totale lavorato. \310) Tj ET
+BT /F1 11 Tf .12 .18 .28 rg 46 318 Td (un obiettivo da verificare, non una crescita gi\340 misurata.) Tj ET
+.85 .88 .92 RG 46 53 m 549 53 l S
+BT /F1 9 Tf .12 .18 .28 rg 46 35 Td (Guida interna al Portale Pratiche) Tj ET
+BT /F1 9 Tf .12 .18 .28 rg 515 35 Td (4 / 4) Tj ET
+endstream
+endobj
+xref
+0 13
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000134 00000 n 
+0000000231 00000 n 
+0000000333 00000 n 
+0000000469 00000 n 
+0000002922 00000 n 
+0000003058 00000 n 
+0000005972 00000 n 
+0000006109 00000 n 
+0000008413 00000 n 
+0000008551 00000 n 
+trailer
+<< /Size 13 /Root 1 0 R >>
+startxref
+11150
+%%EOF
