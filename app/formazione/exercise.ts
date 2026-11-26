@@ -36,7 +36,7 @@ export function createExercise(){
      demand(c&&(admin(role)||c.assigned===actor&&(c.kind==='Reclamo'?complaints(role):work(role))));
      Object.assign(c!,{notes:b.notes||'',updated:stamp()});
      if(op==='saveCaseNote')break;
-     Object.assign(c!,{status:b.status,due:b.due||null,outcome_at:stamp(),recovery_assigned:null});
+     Object.assign(c!,{status:b.status,due:b.due_rome||b.due||null,deferred_by_name:b.status==='Differita'?profiles[role]+' di prova':c!.deferred_by_name,outcome_at:stamp(),recovery_assigned:null});
      if(b.vo&&b.status==='Differita')c!.vo=b.vo;
      if(c!.kind==='Reclamo'&&b.status==='Gestito')c!.assigned=null;
      if(c!.kind==='Reclamo'&&b.status==='Chiusa')cases=cases.filter(x=>x!==c);
