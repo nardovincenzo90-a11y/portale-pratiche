@@ -1,5 +1,5 @@
 import { sameOrigin } from '../../../lib/backend';
-import { companyEmail, validEmail, enrollmentService } from '../../../lib/enrollment';
+import { companyEmail, validEmail, enrollmentService, sendEnrollmentLink } from '../../../lib/enrollment';
 
 export async function POST(req: Request) {
   if (!sameOrigin(req)) return Response.json({ error: 'Origine non valida.' }, { status: 403 });
@@ -16,7 +16,8 @@ export async function POST(req: Request) {
     }
     if (!name || name.length > 120) return Response.json({ error: 'Inserisci nome e cognome.' }, { status: 400 });
     await enrollmentService('request', { work_email: email, recovery_email: alternate, name });
-    return Response.json({ message: 'Richiesta ricevuta. Dopo la verifica dell’amministratore, riceverai il link di attivazione sulla casella alternativa indicata.' });
+    await sendEnrollmentLink(email, true, alternate).catch(() => console.warn('Invio attivazione Portale non completato'));
+    return Response.json({ message: 'Se l’abbinamento è già verificato, il link di attivazione sarà inviato all’indirizzo alternativo indicato. Controlla anche la posta indesiderata. Se non hai ancora un abbinamento, contatta l’amministratore.' });
   } catch {
     return Response.json({ error: 'Registrazione temporaneamente non disponibile.' }, { status: 503 });
   }

@@ -8,7 +8,7 @@ export const recoveryNotice =
 function credentials() {
   const key = process.env.PORTAL_SUPABASE_ADMIN_KEY;
   const mailKey = process.env.PORTAL_BREVO_API_KEY;
-  const sender = process.env.PORTAL_MAIL_SENDER;
+  const sender = process.env.PORTAL_MAIL_SENDER || 'nardovincenzo90@gmail.com';
   if (!key || !mailKey || !sender) throw new Error('Invio email da configurare');
   return { key, mailKey, sender };
 }
@@ -26,9 +26,9 @@ export async function enrollmentService(operation: string, details: Record<strin
   return response.json();
 }
 
-export async function sendEnrollmentLink(workEmail: string, activate: boolean) {
+export async function sendEnrollmentLink(workEmail: string, activate: boolean, alternate?: string) {
   const { key, mailKey, sender } = credentials();
-  const enrollment = await enrollmentService('reserve_send', { work_email: workEmail });
+  const enrollment = await enrollmentService('reserve_send', { work_email: workEmail, ...(alternate ? { recovery_email: alternate } : {}) });
   if (!enrollment) return false;
 
   const { url } = config();
